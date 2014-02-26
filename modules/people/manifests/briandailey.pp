@@ -1,12 +1,13 @@
 class people::briandailey {
   notify { 'class people::briandailey declared': }
-  include iterm2
+  include iterm2::dev
   include alfred
-  include sysctl
   include firefox
   include dropbox
   include libreoffice
   include spectacle
+  include postgresapp
+  include python
 
   git::config::global {
     'user.email': value => 'github@dailytechnology.net';
@@ -55,6 +56,7 @@ class people::briandailey {
     command => 'pip install flake8'
   }
 
+  include sysctl
   exec { 'pipinstallipython':
     command => 'pip install ipython'
   }
@@ -63,15 +65,7 @@ class people::briandailey {
     command => 'pip install numpy'
   }
 
- # Disable Gatekeeper so you can install any package you want
-  property_list_key { 'Disable Gatekeeper':
-    ensure => present,
-    path   => '/var/db/SystemPolicy-prefs.plist',
-    key    => 'enabled',
-    value  => 'no',
-  }
-
-  $my_homedir = "/Users/${::luser}"
+  $my_homedir = "/Users/brian"
 
   # NOTE: Dock prefs only take effect when you restart the dock
   property_list_key { 'Hide the dock':
