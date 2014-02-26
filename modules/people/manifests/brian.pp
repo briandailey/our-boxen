@@ -1,10 +1,9 @@
 class people::brian {
 notify { 'class people::brian declared': }
-  include iterm2::dev
+  include iterm2
   include alfred
   include sysctl
   include firefox
-  include postgresqlapp
   include dropbox
   include libreoffice
   include spectacle
