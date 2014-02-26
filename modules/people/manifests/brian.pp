@@ -1,5 +1,5 @@
-class people::brian {
-notify { 'class people::brian declared': }
+class people::briandailey {
+  notify { 'class people::briandailey declared': }
   include iterm2
   include alfred
   include sysctl
@@ -17,11 +17,11 @@ notify { 'class people::brian declared': }
     'alias.lg': value => "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all";
   }
 
-  $home     = "/Users/${::luser}"
+  $home     = "/Users/brian"
   $vimfiles = "${home}/.vim"
 
   repository { $vimfiles:
-    source  => 'brian/vim-files',
+    source  => 'briandailey/vim-files',
   }
 
   package {
