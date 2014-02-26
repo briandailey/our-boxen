@@ -66,3 +66,6 @@ github "spectacle", "1.0.0"
 github "firefox", "1.0.1"
 github "postgresapp", "1.0.0"
 github "libreoffice", "1.0.0"
+github "alfred",        "1.1.7"
+github "dropbox",        "1.2.0"
+
