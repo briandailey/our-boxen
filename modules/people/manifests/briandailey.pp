@@ -8,6 +8,7 @@ class people::briandailey {
   include spectacle
   include postgresapp
   include python
+  include tmux
 
   git::config::global {
     'user.email': value => 'github@dailytechnology.net';
